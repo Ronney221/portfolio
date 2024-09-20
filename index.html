@@ -10,6 +10,8 @@
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
@@ -115,7 +117,50 @@
                                         <h5 class="card-title">RecipeIQ</h5>
                                         <p class="card-text">RecipeIQ is an intelligent chatbot that helps users find recipes based on ingredients they have on hand. </p>
                                         <p class="card-text">Powered by Dialogflow for natural language understanding, Flask for webhook fulfillment, and Spoonacular API for fetching recipe data, this project demonstrates an end-to-end solution integrating AI, APIs, and databases (MongoDB) for personalized recipe recommendations.</p>
+
+                                        <!-- Button to trigger chatbot -->
+                                        <button id="open-chatbot" class="btn btn-primary">Open RecipeIQ Chatbot</button>
+
+                                        <p></p>
+
                                         <a href="https://github.com/Ronney221/RecipeIQ" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+
+
+                                        <!-- Include Dialogflow Messenger (hidden by default) -->
+                                        <df-messenger
+                                                chat-icon="https://raw.githubusercontent.com/Ronney221/RecipeIQ/main/recipeiq_avatar.png"
+                                                intent="WELCOME"
+                                                chat-title="RecipeIQ"
+                                                agent-id="8523d699-a5ac-4c2d-87ae-e2402e888378"
+                                                language-code="en"
+                                        ></df-messenger>
+                                        <style>
+                                            /* Customize the size of the chatbot */
+                                            df-messenger {
+                                                --df-messenger-width: 650px;  /* Adjust the width */
+                                                --df-messenger-height: 850px; /* Adjust the height */
+                                            }
+                                        </style>
+                                        <script>
+                                            // Wait for the page to fully load
+                                            window.onload = function() {
+                                                const dfMessenger = document.querySelector('df-messenger');
+
+                                                // Hide the chatbot initially
+                                                dfMessenger.style.display = 'none';
+
+                                                // Add event listener to the button
+                                                document.getElementById('open-chatbot').addEventListener('click', function() {
+                                                    // Display the chatbot when the button is clicked
+                                                    dfMessenger.style.display = 'block';
+
+                                                    // Optionally trigger the chat to open immediately
+                                                    const chatFrame = dfMessenger.shadowRoot.querySelector('df-messenger-chat');
+                                                    chatFrame.openChat();
+                                                });
+                                            };
+                                        </script>
+
                                     </div>
                                 </div>
                             </div>
@@ -208,8 +253,6 @@
                         </li>
                     </ul>
                     <br>
-
-
 
 
                 </div>
