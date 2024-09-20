@@ -2,14 +2,6 @@
 
 Welcome to my personal portfolio website! This site showcases my projects, skills, and experiences as a software engineer. Feel free to explore the content and reach out to me if you'd like to connect or learn more about my work.
 
-## Table of Contents
-
-- [About](#about)
-- [Technologies](#technologies)
-- [Setup](#setup)
-- [Live Demo](#live-demo)
-- [Contact](#contact)
-
 ## About
 
 This website is built to highlight my portfolio of work in software engineering, including full-stack development, cloud systems, and AI-powered applications. The projects section features some of the key applications I've worked on, and the skills section lists my proficiency in various technologies.
